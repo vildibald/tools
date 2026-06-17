@@ -1,0 +1,35 @@
+{
+  "providers": {
+    "llama.cpp": {
+      "baseUrl": "http://9800x3d-96-3x5070ti:8080/v1",
+      "api": "openai-completions",
+      "apiKey": "local",
+      "compat": {
+        "maxTokensField": "max_tokens",
+        "supportsStore": false,
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false,
+        "supportsUsageInStreaming": false,
+        "thinkingFormat": "qwen-chat-template"
+      },
+      "models": [
+        {
+          "id": "Qwen3.6-27B-Q8_0.gguf",
+          "name": "Qwen3.6 27B Q8_0",
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": "low",
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "high"
+          }
+        }
+      ]
+    }
+  }
+}

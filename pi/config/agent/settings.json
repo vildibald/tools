@@ -1,0 +1,58 @@
+{
+  "defaultProvider": "llama.cpp",
+  "defaultModel": "Qwen3.6-27B-Q8_0.gguf",
+  "defaultThinkingLevel": "medium",
+  "enabledModels": [
+    "llama.cpp/Qwen3.6-27B-Q8_0.gguf"
+  ],
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 16384,
+    "keepRecentTokens": 24000
+  },
+  "retry": {
+    "enabled": true,
+    "maxRetries": 2
+  },
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "subagents": {
+    "agentOverrides": {
+      "researcher": {
+        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "thinking": "medium"
+      },
+      "scout": {
+        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "thinking": "medium"
+      },
+      "planner": {
+        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "thinking": "high"
+      },
+      "worker": {
+        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "thinking": "high"
+      },
+      "reviewer": {
+        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "thinking": "high"
+      },
+      "oracle": {
+        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "thinking": "high"
+      }
+    }
+  },
+  "packages": [
+    "npm:pi-mcp-extension",
+    "npm:pi-web-access",
+    "npm:pi-subagents",
+    "npm:@narumitw/pi-plan-mode",
+    "npm:pi-intercom",
+    "npm:pi-lens"
+  ],
+  "lastChangelogVersion": "0.79.6",
+  "theme": "dark"
+}

@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "toolPrefix": "mcp",
+    "requestTimeoutMs": 60000,
+    "maxRetries": 1
+  },
+  "mcpServers": {
+    "gitlab-telekom": {
+      "transport": "streamable-http",
+      "url": "https://gitlab.devops.telekom.de/api/v4/mcp",
+      "lifecycle": "eager",
+      "auth": {
+        "type": "oauth"
+      },
+      "requestTimeoutMs": 60000
+    },
+    "searxng": {
+      "transport": "streamable-http",
+      "url": "http://9800x3d-96-3x5070ti:8000/mcp",
+      "lifecycle": "eager",
+      "requestTimeoutMs": 60000
+    }
+  }
+}

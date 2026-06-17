@@ -1,0 +1,186 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "pwd": "allow",
+      "ls": "allow",
+      "ls *": "allow",
+      "tree": "allow",
+      "tree *": "allow",
+      "find *": "allow",
+      "fd *": "allow",
+      "rg": "allow",
+      "rg *": "allow",
+      "grep *": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git branch*": "allow",
+      "git rev-parse*": "allow",
+      "git grep*": "allow",
+      "git ls-files*": "allow",
+      "git remote*": "allow",
+      "git fetch*": "allow",
+      "go version*": "allow",
+      "go env*": "allow",
+      "go list*": "allow",
+      "go test*": "allow",
+      "go vet*": "allow",
+      "go build*": "allow",
+      "go run*": "allow",
+      "gofmt *": "allow",
+      "java *": "allow",
+      "javac *": "allow",
+      "jar *": "allow",
+      "jshell *": "allow",
+      "mvn compile*": "allow",
+      "mvn test*": "allow",
+      "mvn verify*": "allow",
+      "mvn package*": "allow",
+      "gradle build*": "allow",
+      "gradle test*": "allow",
+      "./gradlew build*": "allow",
+      "./gradlew test*": "allow",
+      "node *": "allow",
+      "npm test*": "allow",
+      "npm run *": "allow",
+      "pnpm test*": "allow",
+      "pnpm run *": "allow",
+      "yarn test*": "allow",
+      "yarn run *": "allow",
+      "python *": "allow",
+      "python3 *": "allow",
+      "pip list*": "allow",
+      "pip show*": "allow",
+      "pytest*": "allow",
+      "cargo check*": "allow",
+      "cargo test*": "allow",
+      "cargo build*": "allow",
+      "rustc *": "allow",
+      "make test*": "allow",
+      "make check*": "allow",
+      "make build*": "allow",
+      "cmake *": "allow",
+      "ninja *": "allow",
+      "cat *": "allow",
+      "less *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "sed *": "allow",
+      "awk *": "allow",
+      "wc *": "allow",
+      "sort *": "allow",
+      "uniq *": "allow",
+      "cut *": "allow",
+      "jq *": "allow",
+      "yq *": "allow",
+      "file *": "allow",
+      "stat *": "allow",
+      "du *": "allow",
+      "df *": "allow",
+      "ps *": "allow",
+      "date": "allow",
+      "date *": "allow",
+      "uname *": "allow",
+      "whoami": "allow",
+      "id": "allow",
+      "id *": "allow",
+      "which *": "allow",
+      "command -v *": "allow",
+      "type *": "allow",
+      "env": "allow",
+      "printenv": "allow",
+      "printenv *": "allow"
+    },
+    "websearch": "allow"
+  },
+  "provider": {
+    "llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llama-server",
+      "options": {
+        "baseURL": "http://9800x3d-96-3x5070ti:8080/v1"
+      },
+      "models": {
+        "Qwen3.6-27B-Q8_0.gguf": {
+          "name": "Qwen3.6 27B Q8_0",
+          "attachment": true,
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "gitlab": {
+      "type": "remote",
+      "url": "https://gitlab.devops.telekom.de/api/v4/mcp"
+    },
+    "searxng": {
+      "type": "remote",
+      "url": "http://9800x3d-96-3x5070ti:8000/mcp",
+      "timeout": 60000
+    }
+  },
+  "agent": {
+    "research": {
+      "mode": "subagent",
+      "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+      "description": "Research the repository, dependencies, APIs, and implementation context before planning or building.",
+      "prompt": "Research only. Inspect relevant files, docs, history, and external references when useful. Return concise findings, constraints, risks, and concrete file references. You can use searxng mcp or websearch agent tool to search the internet. Do not modify files.",
+      "permission": {
+        "edit": "deny",
+        "grep": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "read": "allow",
+        "bash": "allow",
+        "webfetch": "allow",
+        "websearch": "allow"
+      }
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+      "description": "Plan changes using research findings before implementation.",
+      "prompt": "Plan first. For non-trivial work, delegate repository/context discovery to the research subagent, then produce a concrete implementation plan. You can use searxng mcp to search the internet. Do not edit product code while planning."
+    },
+    "build": {
+      "mode": "primary",
+      "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+      "description": "Implement planned changes and verify them.",
+      "prompt": "Build from the agreed plan. Make focused edits, run relevant checks, and delegate final code review to the review subagent before reporting completion."
+    },
+    "review": {
+      "mode": "subagent",
+      "model": "openai/gpt-5.5",
+      "description": "Review completed changes for bugs, regressions, security issues, and missing tests.",
+      "prompt": "Review only. Inspect diffs and relevant surrounding code. Prioritize concrete defects, regressions, security issues, and missing tests. Do not modify files.",
+      "permission": {
+        "edit": "deny",
+        "grep": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "read": "allow",
+        "bash": {
+          "*": "ask",
+          "git diff*": "allow",
+          "git status*": "allow",
+          "git log*": "allow",
+          "rg *": "allow"
+        },
+        "webfetch": "deny",
+        "websearch": "deny"
+      }
+    }
+  },
+  "default_agent": "plan",
+  "lsp": true
+}
