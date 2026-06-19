@@ -1,9 +1,10 @@
 {
   "defaultProvider": "llama.cpp",
-  "defaultModel": "Qwen3.6-27B-Q8_0.gguf",
+  "defaultModel": "Qwen3.6-27B",
   "defaultThinkingLevel": "medium",
   "enabledModels": [
-    "llama.cpp/Qwen3.6-27B-Q8_0.gguf"
+    "llama.cpp/Qwen3.6-27B",
+    "llama.cpp/Gemma-4-31B"
   ],
   "compaction": {
     "enabled": true,
@@ -20,27 +21,27 @@
   "subagents": {
     "agentOverrides": {
       "researcher": {
-        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "model": "llama.cpp/Qwen3.6-27B",
         "thinking": "medium"
       },
       "scout": {
-        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "model": "llama.cpp/Qwen3.6-27B",
         "thinking": "medium"
       },
       "planner": {
-        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "model": "llama.cpp/Qwen3.6-27B",
         "thinking": "high"
       },
       "worker": {
-        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "model": "llama.cpp/Qwen3.6-27B",
         "thinking": "high"
       },
       "reviewer": {
-        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "model": "llama.cpp/Qwen3.6-27B",
         "thinking": "high"
       },
       "oracle": {
-        "model": "llama.cpp/Qwen3.6-27B-Q8_0.gguf",
+        "model": "llama.cpp/Qwen3.6-27B",
         "thinking": "high"
       }
     }

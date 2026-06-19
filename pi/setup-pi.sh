@@ -5,8 +5,9 @@ PI_AGENT_DIR="${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}"
 PI_WEB_CONFIG="$HOME/.pi/web-search.json"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="${SCRIPT_DIR}/config"
-QWEN_BASE_URL="${QWEN_BASE_URL:-http://9800x3d-96-3x5070ti:8080/v1}"
-QWEN_MODEL="${QWEN_MODEL:-Qwen3.6-27B-Q8_0.gguf}"
+QWEN_BASE_URL="${QWEN_BASE_URL:-http://9800x3d-96-5080-3x5070ti:8080/v1}"
+QWEN_MODEL="${QWEN_MODEL:-Qwen3.6-27B}"
+GEMMA_MODEL="${GEMMA_MODEL:-Gemma-4-31B}"
 
 require_cmd() {
   if ! command -v "$1" >/dev/null 2>&1; then
@@ -56,6 +57,7 @@ EOF_NODE
 verify_pi() {
   pi --version
   pi --list-models qwen --offline
+  pi --list-models gemma --offline
 
   if curl -fsS "$QWEN_BASE_URL/models" >/dev/null 2>&1; then
     pi --offline --no-session --no-tools -p "Reply with exactly: pi-qwen-ok"

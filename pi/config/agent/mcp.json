@@ -16,7 +16,7 @@
     },
     "searxng": {
       "transport": "streamable-http",
-      "url": "http://9800x3d-96-3x5070ti:8000/mcp",
+      "url": "http://9800x3d-96-5080-3x5070ti:8000/mcp",
       "lifecycle": "eager",
       "requestTimeoutMs": 60000
     }

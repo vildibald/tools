@@ -1,7 +1,7 @@
 {
   "providers": {
     "llama.cpp": {
-      "baseUrl": "http://9800x3d-96-3x5070ti:8080/v1",
+      "baseUrl": "http://9800x3d-96-5080-3x5070ti:8080/v1",
       "api": "openai-completions",
       "apiKey": "local",
       "compat": {
@@ -14,9 +14,12 @@
       },
       "models": [
         {
-          "id": "Qwen3.6-27B-Q8_0.gguf",
-          "name": "Qwen3.6 27B Q8_0",
-          "input": ["text", "image"],
+          "id": "Qwen3.6-27B",
+          "name": "Qwen3.6 27B",
+          "input": [
+            "text",
+            "image"
+          ],
           "contextWindow": 262144,
           "maxTokens": 65536,
           "reasoning": true,
@@ -28,6 +31,17 @@
             "high": "high",
             "xhigh": "high"
           }
+        },
+        {
+          "id": "Gemma-4-31B",
+          "name": "Gemma 4 31B",
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "reasoning": false
         }
       ]
     }
