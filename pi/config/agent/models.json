@@ -41,7 +41,15 @@
           ],
           "contextWindow": 262144,
           "maxTokens": 65536,
-          "reasoning": false
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": "low",
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "high"
+          }
         }
       ]
     }
