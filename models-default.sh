@@ -42,6 +42,45 @@ function ensureOpenCodeModels(config) {
   };
 }
 
+function exploreAgent(model) {
+  return {
+    mode: "subagent",
+    model: `llama.cpp/${model}`,
+    description: "Explore the local repository only: find files, search symbols and keywords, inspect code paths, and answer codebase questions without external research or edits.",
+    prompt: "Explore only. Inspect the local repository with read-only tools. Use grep/glob/list/read and safe shell search commands to find relevant files, symbols, call paths, and implementation details. Return concise findings with concrete file references. Do not modify files. Do not use web search or external documentation; delegate broader dependency/API research to the research subagent.",
+    permission: {
+      edit: "deny",
+      grep: "allow",
+      glob: "allow",
+      list: "allow",
+      read: "allow",
+      bash: {
+        "*": "ask",
+        pwd: "allow",
+        ls: "allow",
+        "ls *": "allow",
+        tree: "allow",
+        "tree *": "allow",
+        "find *": "allow",
+        "fd *": "allow",
+        rg: "allow",
+        "rg *": "allow",
+        "grep *": "allow",
+        "git status*": "allow",
+        "git diff*": "allow",
+        "git log*": "allow",
+        "git show*": "allow",
+        "git branch*": "allow",
+        "git rev-parse*": "allow",
+        "git grep*": "allow",
+        "git ls-files*": "allow",
+      },
+      webfetch: "deny",
+      websearch: "deny",
+    },
+  };
+}
+
 function patchPiSettings(file) {
   if (!fs.existsSync(file)) return;
   const config = readJson(file);
@@ -106,6 +145,7 @@ function patchOpenCodeFile(file) {
   ensureOpenCodeModels(config);
 
   const agents = config.agent || {};
+  if (Object.keys(agents).length > 0) agents.explore = exploreAgent(qwenModel);
   for (const agent of Object.values(agents)) {
     agent.model = `llama.cpp/${qwenModel}`;
   }
