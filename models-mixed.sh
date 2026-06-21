@@ -91,7 +91,7 @@ function patchPiSettings(file) {
   if (!fs.existsSync(file)) return;
   const config = readJson(file);
   config.defaultProvider = "llama.cpp";
-  config.defaultModel = qwenModel;
+  config.defaultModel = gemmaModel;
   config.enabledModels = [`llama.cpp/${qwenModel}`, `llama.cpp/${gemmaModel}`];
 
   const overrides = config.subagents?.agentOverrides || {};

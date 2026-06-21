@@ -1,6 +1,6 @@
 {
   "defaultProvider": "llama.cpp",
-  "defaultModel": "Qwen3.6-27B",
+  "defaultModel": "Gemma-4-31B",
   "defaultThinkingLevel": "medium",
   "enabledModels": [
     "llama.cpp/Qwen3.6-27B",
