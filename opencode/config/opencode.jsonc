@@ -206,7 +206,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "llama.cpp/Qwen3.6-27B",
+      "model": "llama.cpp/Gemma-4-31B",
       "description": "Plan changes using research findings before implementation.",
       "prompt": "Plan first. For non-trivial work, delegate repository/context discovery to the research subagent, then produce a concrete implementation plan. You can use searxng mcp to search the internet. Do not edit product code while planning."
     },

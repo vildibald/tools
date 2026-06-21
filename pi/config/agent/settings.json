@@ -29,7 +29,7 @@
         "thinking": "medium"
       },
       "planner": {
-        "model": "llama.cpp/Qwen3.6-27B",
+        "model": "llama.cpp/Gemma-4-31B",
         "thinking": "high"
       },
       "worker": {

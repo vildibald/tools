@@ -97,7 +97,7 @@ function patchPiSettings(file) {
   const overrides = config.subagents?.agentOverrides || {};
   setPiOverride(overrides, "researcher", gemmaModel, "medium");
   setPiOverride(overrides, "scout", gemmaModel, "medium");
-  setPiOverride(overrides, "planner", qwenModel, "high");
+  setPiOverride(overrides, "planner", gemmaModel, "high");
   setPiOverride(overrides, "worker", qwenModel, "high");
   setPiOverride(overrides, "reviewer", gemmaModel, "medium");
   setPiOverride(overrides, "oracle", qwenModel, "high");
@@ -161,7 +161,7 @@ function patchOpenCodeFile(file) {
   if (Object.keys(agents).length > 0) agents.explore = exploreAgent(gemmaModel);
   setOpenCodeAgent(agents, "explore", gemmaModel);
   setOpenCodeAgent(agents, "research", gemmaModel);
-  setOpenCodeAgent(agents, "plan", qwenModel);
+  setOpenCodeAgent(agents, "plan", gemmaModel);
   setOpenCodeAgent(agents, "build", qwenModel);
   setOpenCodeAgent(agents, "review", gemmaModel);
 
