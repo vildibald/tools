@@ -5,6 +5,8 @@
       "pwd": "allow",
       "ls": "allow",
       "ls *": "allow",
+      "git": "allow",
+      "git *": "allow",
       "tree": "allow",
       "tree *": "allow",
       "find *": "allow",
@@ -168,6 +170,8 @@
           "pwd": "allow",
           "ls": "allow",
           "ls *": "allow",
+          "git": "allow",
+          "git *": "allow",
           "tree": "allow",
           "tree *": "allow",
           "find *": "allow",
@@ -214,7 +218,15 @@
       "mode": "primary",
       "model": "llama.cpp/Qwen3.6-27B",
       "description": "Implement planned changes and verify them.",
-      "prompt": "Build from the agreed plan. Make focused edits, run relevant checks, and delegate final code review to the review subagent before reporting completion."
+      "prompt": "Build from the agreed plan. Make focused edits, run relevant checks, and delegate final code review to the review subagent before reporting completion.",
+      "permission": {
+        "bash": {
+          "go *": "allow",
+          "npm *": "allow",
+          "make": "allow",
+          "make *": "allow"
+        }
+      }
     },
     "review": {
       "mode": "subagent",
@@ -229,6 +241,10 @@
         "read": "allow",
         "bash": {
           "*": "ask",
+          "ls": "allow",
+          "ls *": "allow",
+          "git": "allow",
+          "git *": "allow",
           "git diff*": "allow",
           "git status*": "allow",
           "git log*": "allow",

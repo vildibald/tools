@@ -1,5 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "ls": "allow",
+      "ls *": "allow",
+      "git": "allow",
+      "git *": "allow"
+    }
+  },
   "provider": {
     "llama.cpp": {
       "npm": "@ai-sdk/openai-compatible",
@@ -68,6 +76,8 @@
           "pwd": "allow",
           "ls": "allow",
           "ls *": "allow",
+          "git": "allow",
+          "git *": "allow",
           "tree": "allow",
           "tree *": "allow",
           "find *": "allow",
@@ -129,6 +139,10 @@
         "read": "allow",
         "bash": {
           "*": "ask",
+          "ls": "allow",
+          "ls *": "allow",
+          "git": "allow",
+          "git *": "allow",
           "git diff*": "allow",
           "git status*": "allow",
           "git log*": "allow",
