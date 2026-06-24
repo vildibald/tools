@@ -248,6 +248,10 @@
           "git diff*": "allow",
           "git status*": "allow",
           "git log*": "allow",
+          "go *": "allow",
+          "npm *": "allow",
+          "make": "allow",
+          "make *": "allow",
           "rg *": "allow"
         },
         "webfetch": "deny",
