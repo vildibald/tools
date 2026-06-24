@@ -5,7 +5,10 @@
       "ls": "allow",
       "ls *": "allow",
       "git": "allow",
-      "git *": "allow"
+      "git *": "allow",
+      "read *": "allow",
+      "grep *": "allow",
+      "rg *": "allow"
     }
   },
   "provider": {
