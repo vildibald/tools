@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "Gitlab-Telekom": {
+      "url": "https://gitlab.devops.telekom.de/api/v4/mcp"
+    },
+    "searxng": {
+      "url": "http://9800x3d-96-5080-3x5070ti:8000/mcp"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "baseUrl": "http://9800x3d-96-5080-3x5070ti:8080/v1/chat/completions",
+  "id": "Qwen3.6-27B",
+  "apiType": "OpenAICompletion",
+  "temperature": 0.6,
+  "primaryModel": {
+    "id": "Qwen3.6-27B"
+  },
+  "fasterModel": {
+    "id": "Gemma-4-31B"
+  }
+}

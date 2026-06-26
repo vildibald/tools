@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://9800x3d-96-5080-3x5070ti:8080/v1/chat/completions",
+  "id": "Gemma-4-31B",
+  "apiType": "OpenAICompletion",
+  "primaryModel": {
+    "id": "Gemma-4-31B"
+  },
+  "fasterModel": {
+    "id": "Gemma-4-31B"
+  }
+}
