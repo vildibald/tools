@@ -202,7 +202,7 @@
           "read *": "allow",
           "grep *": "allow",
           "rg *": "allow",
-          "git *": allow
+          "git *": "allow"
         },
         "webfetch": "allow",
         "websearch": "allow"
