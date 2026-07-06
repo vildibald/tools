@@ -16,7 +16,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "llama-server",
       "options": {
-        "baseURL": "http://9800x3d-96-5080-3x5070ti:8080/v1"
+        "baseURL": "http://9800x3d-96ti:8080/v1"
       },
       "models": {
         "Qwen3.6-27B": {

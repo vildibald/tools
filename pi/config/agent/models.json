@@ -1,7 +1,7 @@
 {
   "providers": {
     "llama.cpp": {
-      "baseUrl": "http://9800x3d-96-5080-3x5070ti:8080/v1",
+      "baseUrl": "http://9800x3d-96ti:8080/v1",
       "api": "openai-completions",
       "apiKey": "local",
       "compat": {
