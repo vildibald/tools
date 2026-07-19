@@ -1,0 +1,14 @@
+setupVersion: 1
+modelRoles:
+  default: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
+  smol: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
+  slow: openai-codex/gpt-5.6-terra:high
+  task: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
+  designer: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
+  vision: llama-swap/qwen-3.6-27b-q8_k_xl-1x262144-vl
+  plan: openai-codex/gpt-5.6-terra:medium
+  advisor: openai-codex/gpt-5.6-terra:medium
+providers:
+  webSearch: searxng
+searxng:
+  endpoint: http://9800x3d-96:8001
