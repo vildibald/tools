@@ -103,11 +103,11 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "llama-server",
       "options": {
-        "baseURL": "http://9800x3d-96ti:8080/v1"
+        "baseURL": "http://9800x3d-96:8080/v1"
       },
       "models": {
-        "Qwen3.6-27B": {
-          "name": "Qwen3.6 27B",
+        "Qwen 3.6 27B Q8_K_XL 1x262144 VL": {
+          "name": "Qwen 3.6 27B Q8_K_XL 1x262144 VL",
           "attachment": true,
           "modalities": {
             "input": [
@@ -123,7 +123,58 @@
             "output": 65536
           }
         },
-        "Gemma-4-31B": {
+        "Qwen 3.6 27B Q8_K_XL 2x204800": {
+          "name": "Qwen 3.6 27B Q8_K_XL 2x204800",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 204800,
+            "output": 65536
+          }
+        },
+        "Qwen 3.6 27B Q6_K_XL 2x262144": {
+          "name": "Qwen 3.6 27B Q6_K_XL 2x262144",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          }
+        },
+        "Qwen 3.6 27B Q6_K_XL 4x131072": {
+          "name": "Qwen 3.6 27B Q6_K_XL 4x131072",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "Gemma 4 31B": {
           "name": "Gemma 4 31B",
           "attachment": true,
           "modalities": {
@@ -139,6 +190,40 @@
             "context": 229376,
             "output": 65536
           }
+        },
+        "Qwen 3.5 122B": {
+          "name": "Qwen 3.5 122B",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
+        },
+        "Step-3.7 198B": {
+          "name": "Step-3.7 198B",
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 131072,
+            "output": 65536
+          }
         }
       }
     }
@@ -150,14 +235,14 @@
     },
     "searxng": {
       "type": "remote",
-      "url": "http://9800x3d-96ti:8000/mcp",
+      "url": "http://9800x3d-96:8000/mcp",
       "timeout": 60000
     }
   },
   "agent": {
     "explore": {
       "mode": "subagent",
-      "model": "llama.cpp/Gemma-4-31B",
+      "model": "llama.cpp/Qwen 3.5 122B",
       "description": "Explore the local repository only: find files, search symbols and keywords, inspect code paths, and answer codebase questions without external research or edits.",
       "prompt": "Explore only. Inspect the local repository with read-only tools. Use grep/glob/list/read and safe shell search commands to find relevant files, symbols, call paths, and implementation details. Return concise findings with concrete file references. Do not modify files. Do not use web search or external documentation; delegate broader dependency/API research to the research subagent.",
       "permission": {
@@ -188,7 +273,7 @@
     },
     "research": {
       "mode": "subagent",
-      "model": "llama.cpp/Gemma-4-31B",
+      "model": "llama.cpp/Qwen 3.5 122B",
       "description": "Research the repository, dependencies, APIs, and implementation context before planning or building.",
       "prompt": "Research only. Inspect relevant files, docs, history, and external references when useful. Return concise findings, constraints, risks, and concrete file references. You can use searxng mcp or websearch agent tool to search the internet. Do not modify files.",
       "permission": {
@@ -210,7 +295,7 @@
     },
     "plan": {
       "mode": "primary",
-      "model": "llama.cpp/Gemma-4-31B",
+      "model": "llama.cpp/Qwen 3.5 122B",
       "description": "Plan changes using research findings before implementation.",
       "prompt": "Plan first. For non-trivial work, delegate repository/context discovery to the research subagent, then produce a concrete implementation plan. You can use searxng mcp to search the internet. Do not edit product code while planning.",
       "permission": {
@@ -226,7 +311,7 @@
     },
     "build": {
       "mode": "primary",
-      "model": "llama.cpp/Qwen3.6-27B",
+      "model": "llama.cpp/Qwen 3.6 27B",
       "description": "Implement planned changes and verify them.",
       "prompt": "Build from the agreed plan. Make focused edits, run relevant checks, and delegate final code review to the review subagent before reporting completion.",
       "permission": {
@@ -243,7 +328,7 @@
     },
     "review": {
       "mode": "subagent",
-      "model": "llama.cpp/Gemma-4-31B",
+      "model": "llama.cpp/Gemma 4 31B",
       "description": "Review completed changes for bugs, regressions, security issues, and missing tests.",
       "prompt": "Review only. Inspect diffs and relevant surrounding code. Prioritize concrete defects, regressions, security issues, and missing tests. Do not modify files.",
       "permission": {
