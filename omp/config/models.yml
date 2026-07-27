@@ -8,6 +8,17 @@ providers:
         name: Qwen 3.6 27B Q8_K_XL 2x204800 (llama-swap)
         input: [text, image]
         contextWindow: 204800
+        maxTokens: 65536
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+      - id: qwen-3.6-27b-q6_k_xl-4x131072
+        name: Qwen 3.6 27B Q6_K_XL 4x131072 (llama-swap)
+        input: [text, image]
+        contextWindow: 131072
+        maxTokens: 65536
         cost:
           input: 0
           output: 0
@@ -17,6 +28,17 @@ providers:
         name: Qwen 3.6 27B Q8_K_XL 1x262144 VL (llama-swap)
         input: [text, image]
         contextWindow: 262144
+        maxTokens: 65536
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+      - id: qwen-3.5-122b-q6_k_xl-1x131072
+        name: Qwen 3.5 122B UD-Q6_K_XL 1x131072
+        input: [ text, image ]
+        contextWindow: 131072
+        maxTokens: 65536
         cost:
           input: 0
           output: 0
