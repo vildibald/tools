@@ -1,17 +1,279 @@
+################## DEEPSEEK FULL
+
+#setupVersion: 1
+#modelRoles:
+#  default: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  smol: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  slow: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  task: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  designer: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  vision: llama-swap/qwen-3.8-27b-q8_k_xl-1x262144-vl
+#  plan: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  advisor: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  tiny: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#  commit: llama-swap/deepseek-v4-flash-0731-284b-q8kxl-2x131072
+#providers:
+#  webSearchOrder:
+#    - searxng
+#    - perplexity
+#    - gemini
+#    - anthropic
+#    - codex
+#    - xai
+#    - zai
+#    - exa
+#    - tinyfish
+#    - jina
+#    - kagi
+#    - tavily
+#    - firecrawl
+#    - brave
+#    - kimi
+#    - parallel
+#    - synthetic
+#    - startpage
+#    - duckduckgo
+#    - ecosia
+#    - google
+#    - mojeek
+#    - public
+#searxng:
+#  endpoint: http://9800x3d-96:8001
+#defaultThinkingLevel: auto
+#dev:
+#  autoqaConsent: granted
+#task:
+#  maxConcurrency: 2
+
+################ DEEPSEEK Q3
+
 setupVersion: 1
-modelRoles: 
-  default: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
-  smol: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
-  slow: openai-codex/gpt-5.6-sol:medium
-  task: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
-  designer: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
-  vision: llama-swap/qwen-3.6-27b-q8_k_xl-1x262144-vl
-  plan: openai-codex/gpt-5.6-terra:high
+modelRoles:
+  default: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+  smol: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+  slow: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+  task: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+  designer: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+  vision: llama-swap/qwen-3.8-27b-q8_k_xl-1x262144-vl
+  plan: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
   advisor: openai-codex/gpt-5.6-sol:medium
-  tiny: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
-  commit: llama-swap/qwen-3.6-27b-q8_k_xl-2x204800
-providers: 
-  webSearch: searxng
-searxng: 
+  tiny: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+  commit: llama-swap/deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+providers:
+  webSearchOrder:
+    - searxng
+    - perplexity
+    - gemini
+    - anthropic
+    - codex
+    - xai
+    - zai
+    - exa
+    - tinyfish
+    - jina
+    - kagi
+    - tavily
+    - firecrawl
+    - brave
+    - kimi
+    - parallel
+    - synthetic
+    - startpage
+    - duckduckgo
+    - ecosia
+    - google
+    - mojeek
+    - public
+searxng:
   endpoint: http://9800x3d-96:8001
 defaultThinkingLevel: auto
+dev:
+  autoqaConsent: granted
+task:
+  maxConcurrency: 4
+
+  ################## LAGUNA x2
+  #setupVersion: 1
+  #modelRoles:
+  #  default: llama-swap/laguna-s-2.1-118b-q6_k_xl-2x139264
+  #  smol: llama-swap/laguna-s-2.1-118b-q6_k_xl-2x139264
+  #  slow: openai-codex/gpt-5.6-luna:xhigh
+  #  task: llama-swap/laguna-s-2.1-118b-q6_k_xl-2x139264
+  #  designer: llama-swap/laguna-s-2.1-118b-q6_k_xl-2x139264
+  #  vision: llama-swap/qwen-3.8-27b-q8_k_xl-1x262144-vl
+  #  plan: openai-codex/gpt-5.6-luna:xhigh
+  #  advisor: openai-codex/gpt-5.6-terra:high
+  #  tiny: llama-swap/laguna-s-2.1-118b-q6_k_xl-2x139264
+  #  commit: llama-swap/laguna-s-2.1-118b-q6_k_xl-2x139264
+  #providers:
+  #  webSearchOrder:
+  #    - searxng
+  #    - perplexity
+  #    - gemini
+  #    - anthropic
+  #    - codex
+  #    - xai
+  #    - zai
+  #    - exa
+  #    - tinyfish
+  #    - jina
+  #    - kagi
+  #    - tavily
+  #    - firecrawl
+  #    - brave
+  #    - kimi
+  #    - parallel
+  #    - synthetic
+  #    - startpage
+  #    - duckduckgo
+  #    - ecosia
+  #    - google
+  #    - mojeek
+  #    - public
+  #searxng:
+  #  endpoint: http://9800x3d-96:8001
+  #defaultThinkingLevel: auto
+  #dev:
+  #  autoqaConsent: granted
+  #task:
+  #  maxConcurrency: 2
+
+################## LAGUNA x1
+#setupVersion: 1
+#modelRoles:
+#  default: llama-swap/laguna-s-2.1-118b-q6_k_xl-1x262144
+#  smol: llama-swap/laguna-s-2.1-118b-q6_k_xl-1x262144
+#  slow: openai-codex/gpt-5.6-luna:xhigh
+#  task: llama-swap/laguna-s-2.1-118b-q6_k_xl-1x262144
+#  designer: llama-swap/laguna-s-2.1-118b-q6_k_xl-1x262144
+#  vision: llama-swap/qwen-3.8-27b-q8_k_xl-1x262144-vl
+#  plan: openai-codex/gpt-5.6-luna:xhigh
+#  advisor: openai-codex/gpt-5.6-terra:high
+#  tiny: llama-swap/laguna-s-2.1-118b-q6_k_xl-1x262144
+#  commit: llama-swap/laguna-s-2.1-118b-q6_k_xl-1x262144
+#providers:
+#  webSearchOrder:
+#    - searxng
+#    - perplexity
+#    - gemini
+#    - anthropic
+#    - codex
+#    - xai
+#    - zai
+#    - exa
+#    - tinyfish
+#    - jina
+#    - kagi
+#    - tavily
+#    - firecrawl
+#    - brave
+#    - kimi
+#    - parallel
+#    - synthetic
+#    - startpage
+#    - duckduckgo
+#    - ecosia
+#    - google
+#    - mojeek
+#    - public
+#searxng:
+#  endpoint: http://9800x3d-96:8001
+#defaultThinkingLevel: auto
+#dev:
+#  autoqaConsent: granted
+#task:
+#  maxConcurrency: 1
+#  
+################## QWEN
+
+#setupVersion: 1
+#modelRoles:
+#  default: llama-swap/qwen-3.8-27b-q8_k_xl-2x217088
+#  smol: openai-codex/qwen-3.8-27b-q8_k_xl-2x217088
+#  slow: openai-codex/gpt-5.6-luna:xhigh
+#  task: llama-swap/qwen-3.8-27b-q8_k_xl-2x217088
+#  designer: llama-swap/qwen-3.8-27b-q8_k_xl-2x217088
+#  vision: llama-swap/qwen-3.8-27b-q8_k_xl-1x262144-vl
+#  plan: openai-codex/gpt-5.6-luna:xhigh
+#  advisor: openai-codex/gpt-5.6-luna:xhigh
+#  tiny: llama-swap/qwen-3.8-27b-q8_k_xl-2x217088
+#  commit: llama-swap/qwen-3.8-27b-q8_k_xl-2x217088
+#providers:
+#  webSearchOrder:
+#    - searxng
+#    - perplexity
+#    - gemini
+#    - anthropic
+#    - codex
+#    - xai
+#    - zai
+#    - exa
+#    - tinyfish
+#    - jina
+#    - kagi
+#    - tavily
+#    - firecrawl
+#    - brave
+#    - kimi
+#    - parallel
+#    - synthetic
+#    - startpage
+#    - duckduckgo
+#    - ecosia
+#    - google
+#    - mojeek
+#    - public
+#searxng:
+#  endpoint: http://9800x3d-96:8001
+#defaultThinkingLevel: auto
+#dev:
+#  autoqaConsent: granted
+#task:
+#  maxConcurrency: 2
+
+################### QWEN
+
+#setupVersion: 1
+#modelRoles:
+#  default: llama-swap/qwen-3.8-27b-q6_k_xl-4x172032
+#  smol: openai-codex/qwen-3.8-27b-q6_k_xl-4x172032
+#  slow: openai-codex/gpt-5.6-luna:xhigh
+#  task: llama-swap/qwen-3.8-27b-q6_k_xl-4x172032
+#  designer: llama-swap/qwen-3.8-27b-q6_k_xl-4x172032
+#  vision: llama-swap/qwen-3.8-27b-q8_k_xl-1x262144-vl
+#  plan: openai-codex/gpt-5.6-luna:xhigh
+#  advisor: openai-codex/gpt-5.6-luna:xhigh
+#  tiny: llama-swap/qwen-3.8-27b-q6_k_xl-4x172032
+#  commit: llama-swap/qwen-3.8-27b-q6_k_xl-4x172032
+#providers:
+#  webSearchOrder:
+#    - searxng
+#    - perplexity
+#    - gemini
+#    - anthropic
+#    - codex
+#    - xai
+#    - zai
+#    - exa
+#    - tinyfish
+#    - jina
+#    - kagi
+#    - tavily
+#    - firecrawl
+#    - brave
+#    - kimi
+#    - parallel
+#    - synthetic
+#    - startpage
+#    - duckduckgo
+#    - ecosia
+#    - google
+#    - mojeek
+#    - public
+#searxng:
+#  endpoint: http://9800x3d-96:8001
+#defaultThinkingLevel: auto
+#dev:
+#  autoqaConsent: granted
+#task:
+#  maxConcurrency: 4

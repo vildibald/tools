@@ -4,43 +4,121 @@ providers:
     auth: none
     api: openai-completions
     models:
-      - id: qwen-3.6-27b-q8_k_xl-2x204800
-        name: Qwen 3.6 27B Q8_K_XL 2x204800 (llama-swap)
-        input: [text, image]
-        contextWindow: 204800
-        maxTokens: 65536
-        cost:
+      - id: bge-m3
+        name: BAAI BGE-M3 Q8_0 (llama-swap)
+        input: [text]
+        contextWindow: 8192
+        maxTokens: 131072
+        cost: &free
           input: 0
           output: 0
           cacheRead: 0
           cacheWrite: 0
-      - id: qwen-3.6-27b-q6_k_xl-4x131072
+      - id: deepseek-v4-flash-0731-284b-iq3xxs-4x196608
+        name: DeepSeek V4 Flash 0731 284B IQ3_XXS 4x196608 (llama-swap)
+        input: [text]
+        contextWindow: 196608
+        maxTokens: 131072
+        cost: *free
+      - id: deepseek-v4-flash-0731-284b-q8kxl-4x131072
+        name: DeepSeek V4 Flash 0731 284B UD-Q8_K_XL 4x131072 (llama-swap)
+        input: [text]
+        contextWindow: 131072
+        maxTokens: 131072
+        cost: *free
+      - id: deepseek-v4-flash-0731-284b-q8kxl-2x131072
+        name: DeepSeek V4 Flash 0731 284B UD-Q8_K_XL 2x131072 (llama-swap)
+        input: [ text ]
+        contextWindow: 131072
+        maxTokens: 131072
+        cost: *free
+      - id: gemma-4-26b-a4b-ud-q4_k_xl-8x131072-vl
+        name: Gemma 4 26B A4B UD-Q4_K_XL 8x131072 VL (llama-swap)
+        input: [text, image]
+        contextWindow: 131072
+        maxTokens: 131072
+        cost: *free
+      - id: gemma-4-26b-a4b-ud-q4_k_xl-8x131072-vl-inst
+        name: Gemma 4 26B A4B UD-Q4_K_XL 8x131072 VL inst (llama-swap)
+        input: [text, image]
+        contextWindow: 131072
+        maxTokens: 131072
+        cost: *free
+      - id: gemma-4-31b-q8_k_xl-1x229376
+        name: Gemma 4 31B Q8_K_XL 1x229376 (llama-swap)
+        input: [text, image]
+        contextWindow: 229376
+        maxTokens: 131072
+        cost: *free
+      - id: laguna-s-2.1-118b-q5_k_xl-2x262144
+        name: Laguna S 2.1 118B UD-Q5_K_XL 2x262144 (llama-swap)
+        input: [text]
+        contextWindow: 262144
+        maxTokens: 131072
+        cost: *free
+      - id: laguna-s-2.1-118b-q5_k_xl-4x131072
+        name: Laguna S 2.1 118B UD-Q5_K_XL 4x131072 (llama-swap)
+        input: [text]
+        contextWindow: 131072
+        maxTokens: 131072
+        cost: *free
+      - id: laguna-s-2.1-118b-q6_k_xl-1x262144
+        name: Laguna S 2.1 118B UD-Q6_K_XL 1x262144 (llama-swap)
+        input: [text]
+        contextWindow: 262144
+        maxTokens: 131072
+        cost: *free
+      - id: laguna-s-2.1-118b-q6_k_xl-2x139264
+        name: Laguna S 2.1 118B UD-Q6_K_XL 2x139264 (llama-swap)
+        input: [text]
+        contextWindow: 139264
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q6_k_xl-2x262144
+        name: Qwen 3.6 27B Q6_K_XL 2x262144 (llama-swap)
+        input: [text, image]
+        contextWindow: 262144
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q6_k_xl-4x131072
         name: Qwen 3.6 27B Q6_K_XL 4x131072 (llama-swap)
         input: [text, image]
         contextWindow: 131072
-        maxTokens: 65536
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
-      - id: qwen-3.6-27b-q8_k_xl-1x262144-vl
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q6_k_xl-4x172032
+        name: Qwen 3.6 27B Q6_K_XL 4x172032 (llama-swap)
+        input: [ text, image ]
+        contextWindow: 172032
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q6_k_xl-4x65536-vl
+        name: Qwen 3.6 27B Q6_K_XL 4x65536 VL (llama-swap)
+        input: [text, image]
+        contextWindow: 65536
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q8_k_xl-1x262144-vl
         name: Qwen 3.6 27B Q8_K_XL 1x262144 VL (llama-swap)
         input: [text, image]
         contextWindow: 262144
-        maxTokens: 65536
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
-      - id: qwen-3.5-122b-q6_k_xl-1x131072
-        name: Qwen 3.5 122B UD-Q6_K_XL 1x131072
-        input: [ text, image ]
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q8_k_xl-2x217088
+        name: Qwen 3.6 27B Q8_K_XL 2x217088 (llama-swap)
+        input: [text, image]
+        contextWindow: 217088
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-27b-q8_k_xl-4x147456
+        name: Qwen 3.6 27B Q8_K_XL 4x147456 (llama-swap)
+        input: [text, image]
+        contextWindow: 147456
+        maxTokens: 131072
+        cost: *free
+      - id: qwen-3.8-35b-q8_k_xl-4x131072
+        name: Qwen 3.6 35B Q8_K_XL 4x131072 (llama-swap)
+        input: [text, image]
         contextWindow: 131072
-        maxTokens: 65536
-        cost:
-          input: 0
-          output: 0
-          cacheRead: 0
-          cacheWrite: 0
+        maxTokens: 131072
+        cost: *free
