@@ -4,7 +4,7 @@ set -euo pipefail
 OMP_AGENT_DIR="${OMP_AGENT_DIR:-$HOME/.omp/agent}"
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="${SCRIPT_DIR}/config"
-OMP_VERSION="${OMP_VERSION:-17.0.5}"
+OMP_VERSION="${OMP_VERSION:-18.0.4}"
 
 require_cmd() {
   if ! command -v "$1" >/dev/null 2>&1; then
